@@ -1,0 +1,150 @@
+*title Reflections: Narrative of Undertakings
+*author Eleckar
+*scene_list
+	Startup
+	Narrative
+	
+*create First ""
+*create Second ""
+*create Third ""
+*create Fourth ""
+
+*create Name "Zygote"
+*create Him ""
+*create He ""
+*create His ""
+*create Boy ""
+
+*create Return 0
+*create Abstract false
+
+*create GoodCop false
+*create Hello false
+*create First 0
+*create Test false
+
+*create Beginning false
+*create Now false
+*create Future false
+*create Friends false
+*create Welcoming false
+*create Revenue false
+*create Contributions false
+*create WrapUp False
+
+
+First things first: boy or girl?
+*label First
+*fake_choice
+	#Boy
+		*goto Boy
+	#Girl
+		*goto Girl
+	#Non-Binary
+		Oh, alright... I suppose.
+		*set boy "non"
+		
+		What pronouns, then?
+		*choice
+			#Masculine - he, his, him
+				*goto Boy
+			#Feminine  - she, her, her
+				*goto Girl
+			#Non - nhe, nhis, nhim 
+				*goto Non
+			#Custom -- set own pronouns.
+				*label InputP
+				Instead of "him" or "her", it would be
+				*input_text him
+				Instead of "his" or "her", it would be
+				*input_text his
+				Finally, instead of "he" or "she", it would be
+				*input_text he
+				In conclusion, your pronouns are ${him}, ${his}, and ${he}. Is this correct?
+				*choice
+					#Yes
+						*gosub Name?
+						*goto Start
+						
+					#No
+						From the top, then.
+
+						*goto InputP
+						*goto InputP
+	*if not (Abstract) 
+		#Just give me the abstract!
+			*set Abstract True
+			*label Abstract
+			Alright, alright! Jeez...
+			
+			This narrative covers one's personal interactions within the "Choice of Games" forums. Notably, the sections that will be covered are the different levels of expertise held within the forum, the amount of activity observable inside the forum, one's ability to help those in need, and one's future plans; as per usual, I will interlace other information within these broad subjects.
+			
+			*if (Return = 1)
+				*page_break
+				*set Return 0
+				*goto_scene Narrative
+			*page_break
+			Now, then... back on topic.
+		
+			Boy or Girl?
+			
+			*goto First
+		*if (Test)
+			#Skip
+				Skip to what?
+				*choice
+					#Narrative Start
+						*goto_scene Narrative
+					#Beginning
+						*goto_scene Narrative Beginning
+					#Now
+						*goto_scene Narrative Now?
+	*if (Test)
+		#Test
+			*goto_scene Narrative Test
+*label GenderSetup
+	*label Boy
+	*set Him "him"
+	*set He "he"
+	*set His "his"
+	*set Boy "boy"
+	*goto Name?
+	*set Him "her"
+	*label Girl
+	*set He "she"
+	*set Him "her"
+	*set His "her"
+	*set Boy "girl"
+	*goto Name?
+	*label Non
+	*set Him "nhim"
+	*set He "nhe"
+	*set His "nhis"
+	*set Boy "non"
+	*goto Name?
+
+*label Name?
+Want to name ${him}?
+*fake_choice
+	#What? No!
+		Huh, that's fine. Bobby it is.
+		
+		*goto Start
+	#Sure, why not.
+		That's the spirit!
+		
+		Just enter any name below, and do remember that it's case-sensitive!
+		*input_text Name
+		
+		${Name}? Really? Well, I guess they can't all be winners.
+		
+		*goto Start
+*label Start
+Glad we got that out of the way.
+*fake_choice
+	*if not (abstract) 
+		#Not so fast. Let me read that abstract.
+			*set Return 1
+			*goto Abstract
+	#Yeah, me too.
+		*goto_scene Narrative

@@ -1,0 +1,27 @@
+"Time spent in self-reflection is never wasted -  it is an intimate date with yourself" - Paul TP Wong
+
+---
+
+Abstract
+
+---
+
+This narrative covers one's personal interactions within the "Choice of Games" forums. Notably, the sections that will be covered are the different levels of expertise held within the forum, the amount of activity observable inside the forum, one's ability to help those in need, and one's future plans; as per usual, I will interlace other information within these broad subjects.
+
+---
+
+Version History
+
+---
+
+[b]2016:[/b]
+
+(Version 1.0)
+
+[i]March 29[/i]: Project Created 
+
+[i]March 29-31[/i]: Initial Writing
+
+[i]May 17 - May 25[/i]: Implementing into ChoiceScript
+
+[i]June 5[/i]: Bug Fixing / Continuity Checking , Releasing to Public , Renaming (Choice of Reflections --> Reflections: Narrative of Undertakings [Name Still WIP])
